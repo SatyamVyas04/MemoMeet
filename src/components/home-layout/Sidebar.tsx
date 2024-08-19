@@ -8,7 +8,7 @@ import { cn } from '@/lib/utils'
 const Sidebar = () => {
     const pathname = usePathname()
     return (
-        <section className="sticky left-0 top-0 h-screen w-fit flex-col justify-between bg-accent p-4 max-sm:hidden lg:w-[264px]">
+        <aside className="sticky left-0 top-0 h-screen w-fit flex-col justify-between bg-accent p-4 sm:pt-28 max-sm:hidden lg:w-[264px]">
             <div className="flex flex-1 flex-col gap-4">
                 {sidebarLinks.map((link) => {
                     const isActive = pathname === link.route
@@ -32,7 +32,7 @@ const Sidebar = () => {
                     )
                 })}
             </div>
-        </section>
+        </aside>
     )
 }
 
