@@ -3,6 +3,8 @@ import { ModeToggle } from '../ui/mode-toggle'
 import Link from 'next/link'
 import Image from 'next/image'
 import MobileNav from './MobileNav'
+import { SignedIn, SignedOut, SignInButton, UserButton } from '@clerk/nextjs'
+import { Button } from '../ui/button'
 
 const Navbar = () => {
     return (
@@ -18,8 +20,15 @@ const Navbar = () => {
                     Zoom
                 </h1>
             </Link>
-            <div className="flex items-center justify-between gap-2">
-                {/* Clerk Management */}
+            <div className="flex items-center justify-between gap-2 sm:gap-4">
+                <SignedOut>
+                    <Button>
+                        <SignInButton />
+                    </Button>
+                </SignedOut>
+                <SignedIn>
+                    <UserButton />
+                </SignedIn>
                 <ModeToggle />
                 <MobileNav />
             </div>

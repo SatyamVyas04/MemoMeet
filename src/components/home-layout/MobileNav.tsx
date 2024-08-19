@@ -2,6 +2,7 @@
 import React from 'react'
 import {
     Sheet,
+    SheetClose,
     SheetContent,
     SheetDescription,
     SheetHeader,
@@ -34,8 +35,8 @@ const MobileNav = () => {
                     side="left"
                     className="w-full max-w-[264px] border-none"
                 >
-                    <SheetHeader>
-                        <SheetTitle className="-mt-1 mb-8">
+                    <SheetHeader className="mb-4">
+                        <SheetTitle className="-mt-1">
                             <Link href="/" className="flex items-center gap-1">
                                 <Image
                                     src="/icons/logo.svg"
@@ -48,11 +49,12 @@ const MobileNav = () => {
                                 </h1>
                             </Link>
                         </SheetTitle>
-                        <SheetDescription>
-                            {sidebarLinks.map((link) => {
-                                const isActive = pathname === link.route
-
-                                return (
+                    </SheetHeader>
+                    <SheetDescription>
+                        {sidebarLinks.map((link) => {
+                            const isActive = pathname === link.route
+                            return (
+                                <SheetClose asChild key={link.route}>
                                     <Link
                                         href={link.route}
                                         key={link.label}
@@ -69,10 +71,10 @@ const MobileNav = () => {
                                             {link.label}
                                         </p>
                                     </Link>
-                                )
-                            })}
-                        </SheetDescription>
-                    </SheetHeader>
+                                </SheetClose>
+                            )
+                        })}
+                    </SheetDescription>
                 </SheetContent>
             </Sheet>
         </section>
