@@ -4,6 +4,7 @@ import type { Metadata } from 'next'
 import './globals.css'
 import { ClerkProvider } from '@clerk/nextjs'
 import { Toaster } from 'sonner'
+import '@stream-io/video-react-sdk/dist/css/styles.css';
 
 const encodeSans = Encode_Sans({
     weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],

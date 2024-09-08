@@ -13,6 +13,7 @@ import {
     PlusIcon,
     RocketLaunchIcon,
 } from '@heroicons/react/24/outline'
+import { useTheme } from 'next-themes'
 
 import { Button } from '@/components/ui/button'
 import HomeCard from './HomeCard'
@@ -33,6 +34,7 @@ const MeetingTypeList = () => {
     const client = useStreamVideoClient()
     const { user } = useUser()
     const router = useRouter()
+    const { setTheme } = useTheme()
 
     const closeDialog = () => {
         setIsDialogOpen(false)
@@ -72,6 +74,7 @@ const MeetingTypeList = () => {
                 description: 'You can now share the link with others',
             })
 
+            setTheme('dark')
             if (!values.description) {
                 router.push(`/meeting/${id}`)
             }
