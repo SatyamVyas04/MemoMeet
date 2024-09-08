@@ -1,10 +1,14 @@
 import { ThemeProvider } from '@/components/theme-provider'
-import { Inter } from 'next/font/google'
+import { Encode_Sans } from 'next/font/google'
 import type { Metadata } from 'next'
 import './globals.css'
 import { ClerkProvider } from '@clerk/nextjs'
+import { Toaster } from 'sonner'
 
-const inter = Inter({ subsets: ['latin'] })
+const encodeSans = Encode_Sans({
+    weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
+    subsets: ['latin'],
+})
 
 export const metadata: Metadata = {
     title: 'Zoom Clone',
@@ -20,7 +24,7 @@ export default function RootLayout({
         <html lang="en">
             <ClerkProvider>
                 <body
-                    className={`${inter.className} bg-background text-foreground`}
+                    className={`${encodeSans.className} bg-background text-foreground`}
                 >
                     <ThemeProvider
                         attribute="class"
@@ -29,6 +33,12 @@ export default function RootLayout({
                         disableTransitionOnChange
                     >
                         {children}
+                        <Toaster
+                            richColors
+                            closeButton
+                            expand={false}
+                            position="bottom-center"
+                        />
                     </ThemeProvider>
                 </body>
             </ClerkProvider>

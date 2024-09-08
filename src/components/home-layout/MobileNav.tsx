@@ -12,7 +12,7 @@ import {
 import Image from 'next/image'
 import Link from 'next/link'
 import { Button } from '../ui/button'
-import { sidebarLinks } from '../../../constants'
+import { sidebarLinks } from '@/constants/'
 import { usePathname } from 'next/navigation'
 import { cn } from '@/lib/utils'
 
