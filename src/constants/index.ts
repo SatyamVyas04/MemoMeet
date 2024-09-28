@@ -1,7 +1,7 @@
 import {
     HomeIcon,
     CalendarDaysIcon,
-    ClockIcon,
+    DocumentDuplicateIcon,
     VideoCameraIcon,
     UserGroupIcon,
     PlusIcon,
@@ -22,7 +22,7 @@ export const sidebarLinks = [
     {
         label: 'Previous',
         route: '/previous',
-        imgUrl: ClockIcon,
+        imgUrl: DocumentDuplicateIcon,
     },
     {
         label: 'Recordings',
@@ -48,7 +48,7 @@ export const homePageLinks = [
         label: 'Schedule a Meeting',
         className: '#3b82f6',
         test: 'bg-emerald-400',
-        icon: ClockIcon,
+        icon: DocumentDuplicateIcon,
         description: 'Schedule a new meeting for later',
     },
     {
