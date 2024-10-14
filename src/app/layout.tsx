@@ -1,9 +1,9 @@
 import { ThemeProvider } from '@/components/theme-provider'
 import { Encode_Sans } from 'next/font/google'
 import type { Metadata } from 'next'
-import './globals.css'
 import { ClerkProvider } from '@clerk/nextjs'
 import { Toaster } from 'sonner'
+import './globals.css'
 import '@stream-io/video-react-sdk/dist/css/styles.css'
 
 const encodeSans = Encode_Sans({
@@ -12,8 +12,46 @@ const encodeSans = Encode_Sans({
 })
 
 export const metadata: Metadata = {
-    title: 'Zoom Clone',
-    description: 'A deeper dive into the realm of nextjs',
+    title: 'MemoMeet | Smart Video Conferencing',
+    description:
+        'Experience next-level video conferencing with AI-powered transcription and summarization. MemoMeet - Where conversations become insights.',
+    keywords: [
+        'video conferencing',
+        'meeting transcription',
+        'AI summarization',
+        'remote collaboration',
+        'productivity tools',
+    ],
+    authors: [{ name: 'Satyam Vyas', url: 'https://yourwebsite.com' }],
+    creator: 'Satyam Vyas',
+    publisher: 'Satyam Vyas',
+    robots: 'index, follow',
+    viewport: 'width=device-width, initial-scale=1',
+    openGraph: {
+        type: 'website',
+        locale: 'en_US',
+        url: 'https://memomeet.com',
+        siteName: 'MemoMeet',
+        title: 'MemoMeet - Smart Video Conferencing Platform',
+        description:
+            'Transform your meetings with AI-powered transcription and summarization. MemoMeet makes every conversation count.',
+        images: [
+            {
+                url: 'https://memomeet.com/og-image.jpg',
+                width: 1200,
+                height: 630,
+                alt: 'MemoMeet - Smart Video Conferencing',
+            },
+        ],
+    },
+    twitter: {
+        card: 'summary_large_image',
+        site: '@memomeet',
+        creator: '@SatyamVyas04',
+    },
+    applicationName: 'MemoMeet',
+    referrer: 'origin-when-cross-origin',
+    category: 'Technology',
 }
 
 export default function RootLayout({

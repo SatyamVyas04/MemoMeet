@@ -12,12 +12,12 @@ const Navbar = () => {
             <Link href="/" className="flex items-center gap-1">
                 <Image
                     src="/icons/logo.svg"
-                    alt="Zoom logo"
+                    alt="MemoMeet logo"
                     width={32}
                     height={32}
                 ></Image>
                 <h1 className="text-[24px] font-extrabold max-sm:hidden">
-                    Zoom
+                    MemoMeet
                 </h1>
             </Link>
             <div className="flex items-center justify-between gap-2 sm:gap-4">

@@ -8,12 +8,12 @@ const SignUpPage = () => {
             <div className="my-4 flex items-center gap-1">
                 <Image
                     src="/icons/logo.svg"
-                    alt="Zoom logo"
+                    alt="MemoMeet logo"
                     width={32}
                     height={32}
                 ></Image>
                 <h1 className="text-[24px] font-extrabold max-sm:hidden">
-                    Zoom
+                    MemoMeet
                 </h1>
             </div>
             <SignUp />
