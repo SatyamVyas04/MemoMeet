@@ -8,7 +8,7 @@ import { Button } from '../ui/button'
 
 const Navbar = () => {
     return (
-        <nav className="fixed z-50 flex w-full justify-between border-b-2 border-primary px-6 py-4 backdrop-blur-xl lg:px-10">
+        <nav className="fixed z-50 flex w-full justify-between border-b-2 border-primary px-4 py-3 backdrop-blur-xl lg:px-6">
             <Link href="/" className="flex items-center gap-1">
                 <Image
                     src="/icons/logo.svg"
@@ -16,7 +16,7 @@ const Navbar = () => {
                     width={32}
                     height={32}
                 ></Image>
-                <h1 className="text-[24px] font-extrabold max-sm:hidden">
+                <h1 className="text-[24px] font-extrabold">
                     MemoMeet
                 </h1>
             </Link>

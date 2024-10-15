@@ -8,8 +8,8 @@ import { cn } from '@/lib/utils'
 const Sidebar = () => {
     const pathname = usePathname()
     return (
-        <aside className="sticky left-0 top-0 h-screen w-fit flex-col justify-between bg-accent p-4 max-sm:hidden sm:pt-28 lg:w-[264px]">
-            <div className="flex flex-1 flex-col gap-4">
+        <aside className="sticky left-0 top-0 h-screen w-fit flex-col justify-between bg-accent p-4 max-sm:hidden sm:pt-20 lg:w-[224px]">
+            <div className="flex flex-1 flex-col gap-2">
                 {sidebarLinks.map((link) => {
                     const isActive = pathname === link.route
 
@@ -18,7 +18,7 @@ const Sidebar = () => {
                             href={link.route}
                             key={link.label}
                             className={cn(
-                                'flex items-center justify-start gap-4 rounded-md p-4',
+                                'flex items-center justify-start gap-4 rounded-md p-3',
                                 {
                                     'bg-primary text-accent': isActive,
                                 }

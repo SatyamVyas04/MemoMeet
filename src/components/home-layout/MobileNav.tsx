@@ -36,7 +36,7 @@ const MobileNav = () => {
                     className="w-full max-w-[264px] border-none"
                 >
                     <SheetHeader className="mb-4">
-                        <SheetTitle className="-mt-1">
+                        <SheetTitle className="mt-1 ml-2">
                             <Link href="/" className="flex items-center gap-1">
                                 <Image
                                     src="/icons/logo.svg"
@@ -59,7 +59,7 @@ const MobileNav = () => {
                                         href={link.route}
                                         key={link.label}
                                         className={cn(
-                                            'flex items-center justify-start gap-4 rounded-md p-4',
+                                            'flex items-center justify-start gap-4 rounded-md p-3',
                                             {
                                                 'bg-primary text-accent':
                                                     isActive,
