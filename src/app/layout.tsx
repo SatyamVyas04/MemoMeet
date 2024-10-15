@@ -26,7 +26,6 @@ export const metadata: Metadata = {
     creator: 'Satyam Vyas',
     publisher: 'Satyam Vyas',
     robots: 'index, follow',
-    viewport: 'width=device-width, initial-scale=1',
     openGraph: {
         type: 'website',
         locale: 'en_US',

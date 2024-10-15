@@ -15,9 +15,13 @@ import { Button } from '../ui/button'
 import { sidebarLinks } from '@/constants/'
 import { usePathname } from 'next/navigation'
 import { cn } from '@/lib/utils'
+import { useUser } from '@clerk/nextjs'
 
 const MobileNav = () => {
     const pathname = usePathname()
+    const { isSignedIn } = useUser()
+    const homeLink = isSignedIn ? '/home' : '/'
+
     return (
         <section className="sm:hidden">
             <Sheet>
@@ -36,8 +40,11 @@ const MobileNav = () => {
                     className="w-full max-w-[264px] border-none"
                 >
                     <SheetHeader className="mb-4">
-                        <SheetTitle className="mt-1 ml-2">
-                            <Link href="/" className="flex items-center gap-1">
+                        <SheetTitle className="ml-2 mt-1">
+                            <Link
+                                href={homeLink}
+                                className="flex items-center gap-1"
+                            >
                                 <Image
                                     src="/icons/logo.svg"
                                     alt="MemoMeet logo"

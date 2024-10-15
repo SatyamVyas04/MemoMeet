@@ -11,7 +11,7 @@ import {
 export const sidebarLinks = [
     {
         label: 'Home',
-        route: '/',
+        route: '/home',
         imgUrl: HomeIcon,
     },
     {
