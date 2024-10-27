@@ -1,12 +1,13 @@
 import { ThemeProvider } from '@/components/theme-provider'
-import { Encode_Sans } from 'next/font/google'
+import { Inter } from 'next/font/google'
 import type { Metadata } from 'next'
 import { ClerkProvider } from '@clerk/nextjs'
 import { Toaster } from 'sonner'
 import './globals.css'
 import '@stream-io/video-react-sdk/dist/css/styles.css'
+import 'react-datepicker/dist/react-datepicker.css'
 
-const encodeSans = Encode_Sans({
+const inter = Inter({
     weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
     subsets: ['latin'],
 })
@@ -15,6 +16,7 @@ export const metadata: Metadata = {
     title: 'MemoMeet | Smart Video Conferencing',
     description:
         'Experience next-level video conferencing with AI-powered transcription and summarization. MemoMeet - Where conversations become insights.',
+    icons: '/icons/logo.svg',
     keywords: [
         'video conferencing',
         'meeting transcription',
@@ -62,7 +64,7 @@ export default function RootLayout({
         <html lang="en" suppressHydrationWarning={true}>
             <ClerkProvider>
                 <body
-                    className={`${encodeSans.className} bg-background text-foreground`}
+                    className={`${inter.className} bg-background text-foreground`}
                 >
                     <ThemeProvider
                         attribute="class"

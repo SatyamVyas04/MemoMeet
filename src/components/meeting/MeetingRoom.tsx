@@ -11,6 +11,8 @@ import {
     RecordCallButton,
     ReactionsButton,
     CancelCallButton,
+    useCallStateHooks,
+    CallingState,
 } from '@stream-io/video-react-sdk'
 import React, { useState } from 'react'
 import {
@@ -30,6 +32,7 @@ import { LayoutList, Users } from 'lucide-react'
 import { Button } from '../ui/button'
 import { useSearchParams } from 'next/navigation'
 import EndCallButton from './EndCallButton'
+import { Loader } from '../ui/loader'
 
 type CallLayout = 'speaker-left' | 'speaker-right' | 'grid'
 
@@ -38,6 +41,10 @@ const MeetingRoom = () => {
     const isPersonalRoom = !!searchParams.get('personal')
     const [layout, setLayout] = useState<CallLayout>('speaker-left')
     const [showParticipantsBar, setShowParticipantsBar] = useState(false)
+    const { useCallCallingState } = useCallStateHooks()
+    const callingState = useCallCallingState()
+
+    if (callingState != CallingState.JOINED) return <Loader />
 
     const CallLayout = () => {
         switch (layout) {
