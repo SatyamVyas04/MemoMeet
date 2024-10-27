@@ -18,6 +18,7 @@ import { Textarea } from '@/components/ui/textarea'
 import ReactDatePicker from 'react-datepicker'
 import { toast } from 'sonner'
 import { Input } from '@/components/ui/input'
+import { useTheme } from 'next-themes'
 
 const initialValues = {
     dateTime: new Date(),
@@ -37,8 +38,10 @@ const MeetingTypeList = () => {
     const [callDetail, setCallDetail] = useState<Call>()
     const client = useStreamVideoClient()
     const { user } = useUser()
+    const { setTheme } = useTheme()
 
     const createMeeting = async () => {
+        setTheme('dark')
         if (!client || !user) return
         try {
             if (!values.dateTime) {
@@ -107,7 +110,7 @@ const MeetingTypeList = () => {
     ]
 
     return (
-        <section className="grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-4">
+        <section className="mt-3 grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-4">
             {homeCards.map((card, index) => (
                 <HomeCard key={index} {...card} />
             ))}
@@ -180,7 +183,7 @@ const MeetingTypeList = () => {
                     onChange={(e) =>
                         setValues({ ...values, link: e.target.value })
                     }
-                    className="border-none focus-visible:ring-0 focus-visible:ring-offset-0"
+                    className="bg-accent"
                 />
             </MeetingModal>
 

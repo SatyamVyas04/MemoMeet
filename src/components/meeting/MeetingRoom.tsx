@@ -28,15 +28,16 @@ import {
     TooltipProvider,
     TooltipTrigger,
 } from '../ui/tooltip'
-import { LayoutList, Users } from 'lucide-react'
+import { LayoutList, Router, Users } from 'lucide-react'
 import { Button } from '../ui/button'
-import { useSearchParams } from 'next/navigation'
+import { useRouter, useSearchParams } from 'next/navigation'
 import EndCallButton from './EndCallButton'
 import { Loader } from '../ui/loader'
 
 type CallLayout = 'speaker-left' | 'speaker-right' | 'grid'
 
 const MeetingRoom = () => {
+    const router = useRouter()
     const searchParams = useSearchParams()
     const isPersonalRoom = !!searchParams.get('personal')
     const [layout, setLayout] = useState<CallLayout>('speaker-left')
@@ -173,7 +174,11 @@ const MeetingRoom = () => {
                         </TooltipProvider>
                     </div>
                     <div className="mt-2 md:mt-0">
-                        <CancelCallButton />
+                        <CancelCallButton
+                            onLeave={() => {
+                                router.push('/home')
+                            }}
+                        />
                     </div>
                     {!isPersonalRoom && (
                         <div className="mt-2 md:mt-0">
