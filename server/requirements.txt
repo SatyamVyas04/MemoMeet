@@ -1,0 +1,7 @@
+Flask
+Flask-CORS
+pydub
+openai-whisper
+transformers
+torch
+requests

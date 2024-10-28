@@ -1,7 +1,6 @@
 'use client'
 
 import Image from 'next/image'
-
 import { cn } from '@/lib/utils'
 import { Button } from '@/components/ui/button'
 import { avatarImages } from '@/constants'
@@ -16,6 +15,8 @@ interface MeetingCardProps {
     buttonText?: string
     handleClick: () => void
     link: string
+    summary?: string
+    transcription?: string
 }
 
 const MeetingCard = ({
@@ -27,16 +28,34 @@ const MeetingCard = ({
     handleClick,
     link,
     buttonText,
+    summary,
+    transcription,
 }: MeetingCardProps) => {
     return (
         <section className="flex min-h-[258px] w-full flex-col justify-between rounded-[14px] bg-accent/50 px-5 py-8 xl:max-w-[568px]">
             <article className="flex flex-col gap-5">
                 <Image src={icon} alt="upcoming" width={28} height={28} />
-                <div className="flex justify-between">
+                <div className="flex flex-col gap-4">
                     <div className="flex flex-col gap-2">
                         <h1 className="text-2xl font-bold">{title}</h1>
                         <p className="text-base font-normal">{date}</p>
                     </div>
+                    {summary && (
+                        <div className="flex flex-col gap-2">
+                            <h2 className="text-lg font-semibold">Summary</h2>
+                            <p className="text-sm">{summary}</p>
+                        </div>
+                    )}
+                    {transcription && (
+                        <div className="flex flex-col gap-2">
+                            <h2 className="text-lg font-semibold">
+                                Transcription
+                            </h2>
+                            <p className="max-h-32 overflow-y-auto text-sm">
+                                {transcription}
+                            </p>
+                        </div>
+                    )}
                 </div>
             </article>
             <article className={cn('relative flex justify-center', {})}>
