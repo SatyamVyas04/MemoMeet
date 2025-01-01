@@ -41,7 +41,7 @@ const MeetingSetup = ({
                         }}
                     />
                     Join with mic and camera off
-                    <DeviceSettings></DeviceSettings>
+                    <DeviceSettings />
                 </label>
                 <Button
                     onClick={() => {

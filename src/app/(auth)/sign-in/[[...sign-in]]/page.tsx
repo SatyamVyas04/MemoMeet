@@ -11,7 +11,7 @@ const SignInPage = () => {
                     alt="MemoMeet logo"
                     width={32}
                     height={32}
-                ></Image>
+                 />
                 <h1 className="text-[24px] font-extrabold max-sm:hidden">
                     MemoMeet
                 </h1>
