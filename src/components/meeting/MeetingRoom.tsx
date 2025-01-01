@@ -39,7 +39,7 @@ type CallLayout = 'speaker-left' | 'speaker-right' | 'grid'
 const MeetingRoom = () => {
     const router = useRouter()
     const searchParams = useSearchParams()
-    const isPersonalRoom = !!searchParams.get('personal')
+    const isPersonalRoom = Boolean(searchParams.get('personal'))
     const [layout, setLayout] = useState<CallLayout>('speaker-left')
     const [showParticipantsBar, setShowParticipantsBar] = useState(false)
     const { useCallCallingState } = useCallStateHooks()
