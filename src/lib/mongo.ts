@@ -8,7 +8,7 @@ const connection: ConnectionObject = {}
 
 export async function dbConnect(): Promise<void> {
     if (connection.isConnected) {
-        console.log('Already connected to database')
+        
         return
     }
     try {
@@ -18,7 +18,7 @@ export async function dbConnect(): Promise<void> {
         }
         const db = await mongoose.connect(mongoUri)
         connection.isConnected = db.connections[0].readyState
-        console.log('Connected to database')
+        
     } catch (error) {
         console.log('Error connecting to database: ', error)
         process.exit(1)
