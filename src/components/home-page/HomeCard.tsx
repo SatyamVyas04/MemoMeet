@@ -24,6 +24,14 @@ const HomeCard = ({
                 background: `linear-gradient(145deg, ${bgColor}dd, ${bgColor})`,
             }}
             onClick={onClick}
+            role="button" // Adds semantic meaning for assistive technologies
+            tabIndex={0} // Makes the div focusable with keyboard navigation
+            onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault(); // Prevent scrolling when pressing Space
+                    onClick();
+                }
+            }}
         >
             {/* Content Container */}
             <div className="relative z-10 flex h-full flex-col justify-between">
