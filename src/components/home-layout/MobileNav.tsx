@@ -32,7 +32,7 @@ const MobileNav = () => {
                             alt="menu"
                             width={24}
                             height={24}
-                        ></Image>
+                         />
                     </Button>
                 </SheetTrigger>
                 <SheetContent
@@ -50,7 +50,7 @@ const MobileNav = () => {
                                     alt="MemoMeet logo"
                                     width={32}
                                     height={32}
-                                ></Image>
+                                 />
                                 <h1 className="text-[24px] font-extrabold">
                                     MemoMeet
                                 </h1>
